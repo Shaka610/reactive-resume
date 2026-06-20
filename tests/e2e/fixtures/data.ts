@@ -13,7 +13,7 @@ export type E2EAccount = {
 	password: string;
 };
 
-export function createRunSlug(testInfo: TestInfo) {
+function createRunSlug(testInfo: TestInfo) {
 	const worker = testInfo.workerIndex;
 	const title = sanitize(testInfo.titlePath.join("-")).slice(0, 32);
 	const suffix = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
