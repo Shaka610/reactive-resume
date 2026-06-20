@@ -32,7 +32,7 @@ export async function logoutViaUi(page: Page, account: E2EAccount) {
 	await page.goto("/auth/login");
 }
 
-export async function registerViaApi(request: APIRequestContext, account: E2EAccount, baseURL: string) {
+async function registerViaApi(request: APIRequestContext, account: E2EAccount, baseURL: string) {
 	const response = await request.post("/api/auth/sign-up/email", {
 		headers: {
 			origin: baseURL,
